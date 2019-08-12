@@ -1,1 +1,56 @@
-<h1>This is index</h1>
+<h4 class="ui center aligned medium icon header">
+  <i class="circular red coffee icon"></i>
+  Say Something
+</h4>
+
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui inverted blue vertical menu">
+      <a class="active item">
+        Online Chat
+      </a>
+      <a class="item">
+        Compose Message
+      </a>
+      <a class="item">
+        Inbox
+      </a>
+      <a class="item">
+        Outbox
+      </a>
+      <a class="item">
+        Drafts
+      </a>
+      <a class="item">
+        Trash
+      </a>
+    </div>
+  </div>
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui small feed">
+          <% @messages.each do |message| %>
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                <em><%= message.user.username %></em>: <%= message.body %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="extra content">
+        <form class="ui reply form">
+          <div class="field">
+            <div class="ui fluid icon input">
+              <input type="text" placeholder="Type here ...">
+              <i class="bordered inverted blue edit icon"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
